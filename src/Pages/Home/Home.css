@@ -1,0 +1,43 @@
+/* Ripple.css */
+
+/* Keyframes for ripple animation */
+@keyframes ripple {
+    0%, 100% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(0.9);
+    }
+  }
+  
+  /* Ripple container */
+  .ripple-container {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.05);
+    mask-image: linear-gradient(to bottom, white, transparent);
+  }
+  
+  /* Ripple circles */
+  .ripple-circle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    animation: ripple var(--duration, 2s) ease calc(var(--i, 0) * 0.2s) infinite;
+  }
+  
+  /* Specific border styles */
+  .ripple-circle-dashed {
+    border-style: dashed;
+  }
+  
+  .ripple-circle-solid {
+    border-style: solid;
+  }
+  
+
+  body{
+    overflow-x: hidden;
+  }
